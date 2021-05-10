@@ -1,3 +1,9 @@
+<style>
+body{
+     background: linear-gradient(to right, #2196f3, #f44336)
+ }
+</style>
+
 <h2>Search Authors</h2>
 <form action="/authors" method="GET">
     <label for=""></label>
@@ -9,5 +15,9 @@
     <div>
         <%= author.name %>
     </div>
+    <a href="/authors/<%= author.id %>">View</a>
+    <a href="/authors/<%= author.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm' ,{url: `/authors/${author.id}`}) %>
+    
 
 <%})%>
